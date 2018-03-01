@@ -1,9 +1,10 @@
 VERSION = "1.0.0"
+go_os = import("os")
 
 MakeCommand("scratch", "scratch.new_document", 0)
 
 function new_document()
-    local scratch_dir = os.getenv("TMPDIR")
+    local scratch_dir = go_os.TempDir()
     local random_name = string_random(16, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
     local scratch_path = JoinPaths(scratch_dir, random_name)
     if CurView().Buf:GetName() == "No name" then
