@@ -1,4 +1,4 @@
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 go_os = import("os")
 
 MakeCommand("scratch", "scratch.new_document", 0)
